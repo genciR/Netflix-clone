@@ -19,3 +19,9 @@ spec:
         image: genci001/netflix:latest
         ports:
         - containerPort: 80
+        env:
+        - name: TMDB_V3_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: tmdb-secret       # Replace with your secret name
+              key: api-key            # Replace with your secret's key
